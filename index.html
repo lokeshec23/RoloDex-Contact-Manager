@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <!-- Bootstrap cdn -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-4bw+/aepP/YC94hEpVNVgiZdgIC5+VKNBQNGCHeKRQN+PtmoHDEXuppvnDJzQIu9" crossorigin="anonymous">
+    <!-- end bootstrao cdn -->
+
+    <!-- stylesheet link -->
+    <link rel="stylesheet" href="./css/stylesheet.css">
+    <!-- end stylesheet link -->
+
+    <!-- title bar icon -->
+    <link rel = "icon" href = "https://upload.wikimedia.org/wikipedia/commons/thumb/9/93/Google_Contacts_icon.svg/2048px-Google_Contacts_icon.svg.png" type = "image/x-icon">
+          
+    <!-- end title bar icon -->
+
+    <title>RoloDex - Contact Manager</title>
+</head>
+<body>
+    <!-- header -->
+    <header class="container-fluid" id="header">
+        <h1 class="display-4 fs-1">RoloDex</h1>
+        <p class="">Contact Manager</p>
+    </header>
+    <!-- end header -->
+
+    <!-- main  -->
+    <main id="main">
+        <!-- input form -->
+        <form class="container mt-2 input_container" id="contact_form" autocomplete="off" onsubmit="onFormSumbit()">
+            <div class="row">
+                <!-- First name -->
+                <div class="form-group my-3 col-6">
+                  <label for="first_name">First Name <span class="text-danger">*</span></label>
+                  <input type="text" id="first_name" placeholder="Enter First Name" class="form-control bg-light" >
+                </div>
+                <!-- Last name -->
+                <div class="form-group my-3 col-6">
+                  <label for="last_name">Last Name<span class="text-danger">*</span></label>
+                  <input type="text" name="" id="last_name" placeholder="Enter Last Name" class="form-control bg-light">
+    
+                </div>
+            </div>
+            <!-- phone number -->
+            <div class="form-group">
+              <label for="phone_number">Phone Number <span class="text-danger">*</span></label></label>
+              <input type="number" name="phone_number" id="phone_number" placeholder="+91 12345 67890" class="form-control bg-light">
+            </div>
+            
+            <!-- buttons -->
+            <div class="row form-action--button">
+                <div class="col-6">
+                    <button type="button" id="save_btn" class="btn btn-success my-2 w-100">save</button>
+                </div>
+                <div class="col-6">
+                    <button type="button" id="reset_btn" class="btn btn-secondary my-2 w-100">reset</button>
+                </div>
+            </div>
+        </form>   
+        <!-- end input form -->
+
+        <!-- table -->
+        <table class="table table-striped table-light table-bordered table-rounded container mt-3  list" id="storeList">
+            <thead class="table_head">
+                <tr>
+                    <th>First Name</th>
+                    <th>Last Name</th>
+                    <th>Phone Number</th>
+                    <th>Action</th>
+                </tr>
+            </thead>
+            <tbody id="contact_list">
+                <tr>
+                    <td>Thor</td>
+                    <td>Odison</td>
+                    <td>9361062252</td>
+                    <td>
+                        <button onclick="onEdit(this);" class="btn btn-warning btn-sm edit_btn me-2 edit">Edit</button>
+                        <button class="btn btn-danger btn-sm delete_btn delete">Delete</button>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+        <!-- end table -->
+    </main>
+    <!-- end main -->
+
+
+
+    <!-- main js link -->
+    <script src="./js/main.js"></script>
+    <script src="./js/update.js"></script>
+    <!-- end main js link -->
+
+    <!-- js cdn -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/js/bootstrap.bundle.min.js" integrity="sha384-HwwvtgBNo3bZJJLYd8oVXjrBZt8cqVSpeBNS5n7C8IVInixGAoxmnlMuBnhbgrkm" crossorigin="anonymous"></script>
+    <!-- end js cdn -->
+</body>
+</html>
