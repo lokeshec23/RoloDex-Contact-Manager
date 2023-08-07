@@ -65,35 +65,34 @@ resetBtn.addEventListener("click", () => {
 });
 
 // create element and read an element
-// const tableBody = document.querySelector("tbody");
 saveBtn.addEventListener("click", () => {
     if(selectRow == null){
-  validation();
-  const newTableRow = document.createElement("tr");
-  const newTableDataFirstName = document.createElement("td");
-  const newTableDateLastName = document.createElement("td");
-  const newTableDatePhoneNumber = document.createElement("td");
-  const newTableDataBtn = document.createElement("td");
-  const newEditBtn = document.createElement("button");
-  const newDeleteBtn = document.createElement("button");
-  newTableDataFirstName.append(firstName.value);
-  newTableDateLastName.append(lastName.value);
-  newTableDatePhoneNumber.append(phoneNumber.value);
-  newEditBtn.textContent = "Edit";
-  newDeleteBtn.textContent = "Delete";
-  newEditBtn.setAttribute('onclick', 'onEdit(this)');
-  newEditBtn.classList = "btn btn-warning edit_btn btn-sm me-2 edit";
-  newDeleteBtn.classList = "btn btn-danger delete_btn btn-sm delete";
-  newTableDataBtn.append(newEditBtn, newDeleteBtn);
-  newTableRow.append(
+    validation();
+    const newTableRow = document.createElement("tr");
+    const newTableDataFirstName = document.createElement("td");
+    const newTableDateLastName = document.createElement("td");
+    const newTableDatePhoneNumber = document.createElement("td");
+    const newTableDataBtn = document.createElement("td");
+    const newEditBtn = document.createElement("button");
+    const newDeleteBtn = document.createElement("button");
+    newTableDataFirstName.append(firstName.value);
+    newTableDateLastName.append(lastName.value);
+    newTableDatePhoneNumber.append(phoneNumber.value);
+    newEditBtn.textContent = "Edit";
+    newDeleteBtn.textContent = "Delete";
+    newEditBtn.setAttribute('onclick', 'onEdit(this)');
+    newEditBtn.classList = "btn btn-warning edit_btn btn-sm me-2 edit";
+    newDeleteBtn.classList = "btn btn-danger delete_btn btn-sm delete";
+    newTableDataBtn.append(newEditBtn, newDeleteBtn);
+    newTableRow.append(
     newTableDataFirstName,
     newTableDateLastName,
     newTableDatePhoneNumber,
     newTableDataBtn
-  );
-  tableBody.append(newTableRow);
-  alertFunction("✅ contact Added!", "success");
-  resetInput();
+    );
+    tableBody.append(newTableRow);
+    alertFunction("✅ contact Added!", "success");
+    resetInput();
     }
     else{
         updateRecord();
@@ -115,5 +114,6 @@ function updateRecord(){
     selectRow.cells[0].innerHTML = firstName.value;
     selectRow.cells[1].innerHTML = lastName.value;
     selectRow.cells[2].innerHTML = phoneNumber.value;
+    selectRow = null;
     alertFunction("✅ contact Updated Successfully!","info");
 }
