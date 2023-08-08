@@ -1,5 +1,6 @@
 //Get value
 var selectRow = null;
+var selectError = 1;
 const main = document.querySelector("#main");
 let firstName = document.querySelector("#first_name");
 let lastName = document.querySelector("#last_name");
@@ -108,13 +109,17 @@ function validation() {
 //warning function
 
 function alertFunction(message, className) {
-  const div = document.createElement("div");
-  div.className = `alert alert-${className} container mt-2 p-2`;
-  div.appendChild(document.createTextNode(`${message}`));
-  main.prepend(div);
-  setTimeout(() => {
-    document.querySelector(".alert").remove();
-  }, 2000);
+  if(selectError == 1){
+    selectError = 0;
+    const div = document.createElement("div");
+    div.className = `alert alert-${className} container mt-2 p-2`;
+    div.appendChild(document.createTextNode(`${message}`));
+    main.prepend(div);
+    setTimeout(() => {
+      selectError = 1;
+      document.querySelector(".alert").remove();
+    }, 2000);
+  }
 }
 
 
