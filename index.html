@@ -30,30 +30,32 @@
     <!-- main  -->
     <main id="main">
         <!-- input form -->
-        <form class="container mt-2 input_container" id="contact_form" autocomplete="off" onsubmit="onFormSumbit()">
+        <form class="container mt-2 input_container" id="contact_form" autocomplete="off" >
             <div class="row">
                 <!-- First name -->
-                <div class="form-group my-3 col-6">
+                <div class="form-group my-3 col-6 ">
                   <label for="first_name">First Name <span class="text-danger">*</span></label>
                   <input type="text" id="first_name" placeholder="Enter First Name" class="form-control bg-light" >
+                  <div class="error mt-1"></div>
                 </div>
                 <!-- Last name -->
-                <div class="form-group my-3 col-6">
+                <div class="form-group my-3 col-6 ">
                   <label for="last_name">Last Name<span class="text-danger">*</span></label>
                   <input type="text" name="" id="last_name" placeholder="Enter Last Name" class="form-control bg-light">
-    
+                  <div class="error mt-1"></div>
                 </div>
             </div>
             <!-- phone number -->
-            <div class="form-group">
+            <div class="form-group ">
               <label for="phone_number">Phone Number <span class="text-danger">*</span></label></label>
-              <input type="number" name="phone_number" id="phone_number" placeholder="Enter Phone Number" class="form-control bg-light">
+              <input type="text" name="phone_number" id="phone_number" placeholder="Enter Phone Number" class="form-control bg-light">
+              <div class="error mt-1"></div>
             </div>
             
             <!-- buttons -->
             <div class="row form-action--button">
                 <div class="col-6">
-                    <button type="button" id="save_btn" class="btn btn-success my-2 w-100">save</button>
+                    <button type="submit"  id="save_btn" class="btn btn-success my-2 w-100">save</button>
                 </div>
                 <div class="col-6">
                     <button type="button" id="reset_btn" class="btn btn-secondary my-2 w-100">reset</button>
