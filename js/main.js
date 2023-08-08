@@ -52,9 +52,9 @@ function createElement()
 
 function onEdit(td){
     selectRow = td.parentElement.parentElement;
-    document.getElementById('first_name').value = selectRow.cells[0].innerHTML;
-    document.getElementById('last_name').value = selectRow.cells[1].innerHTML;
-    document.getElementById('phone_number').value = selectRow.cells[2].innerHTML;
+    firstName.value = selectRow.cells[0].innerHTML;
+    lastName.value = selectRow.cells[1].innerHTML;
+    phoneNumber.value = selectRow.cells[2].innerHTML;
     saveBtn.innerText="Update"
 }
 
@@ -130,6 +130,7 @@ tableBody.addEventListener("click", (event) => {
     const confirmation = confirm(
       "Are you sure you want to delete this contact?"
     );
+    selectRow = null;
     if (confirmation) {
       target.parentElement.parentElement.remove();
       alertFunction("❌ Conatct Deleted!", "danger");
