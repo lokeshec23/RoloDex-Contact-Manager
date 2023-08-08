@@ -55,7 +55,7 @@ function onEdit(td){
     firstName.value = selectRow.cells[0].innerHTML;
     lastName.value = selectRow.cells[1].innerHTML;
     phoneNumber.value = selectRow.cells[2].innerHTML;
-    saveBtn.innerText="Update"
+    saveBtn.innerText="update"
 }
 
 // update an element
@@ -135,9 +135,11 @@ tableBody.addEventListener("click", (event) => {
       target.parentElement.parentElement.remove();
       alertFunction("❌ Conatct Deleted!", "danger");
       resetInput();
+      saveBtn.innerText = "save"
     } else {
       alertFunction("Deletion cancelled!", "success");
       resetInput();
+      saveBtn.innerText = "save";
     }
   }
 });
