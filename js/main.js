@@ -11,63 +11,11 @@ const deleteBtn = document.querySelector(".delete_btn");
 const tableBody = document.querySelector("#contact_list");
 const form = document.querySelector("#contact_form");
 
-//validation
-function validation() {
-  if (firstName.value.trim() === "" || lastName.value.trim() === "") {
-    alertFunction("⚠️Please enter your name", "warning");
-    exit();
-  }
-  if (phoneNumber.value.trim() === "") {
-    alertFunction(`⚠️Please enter valid phone number`, "warning");
-    phoneNumber.value = "";
-    phoneNumber.focus();
-    exit();
-  }
-}
-
-//warning function
-function alertFunction(message, className) {
-  const div = document.createElement("div");
-  div.className = `alert alert-${className} container mt-2 p-2`;
-  div.appendChild(document.createTextNode(`${message}`));
-  main.prepend(div);
-  setTimeout(() => {
-    document.querySelector(".alert").remove();
-  }, 2000);
-}
-
-// delete an element
-tableBody.addEventListener("click", (event) => {
-  target = event.target;
-  if (target.classList.contains("delete")) {
-    const confirmation = confirm(
-      "Are you sure you want to delete this contact?"
-    );
-    if (confirmation) {
-      target.parentElement.parentElement.remove();
-      alertFunction("❌ Conatct Deleted!", "danger");
-    } else {
-      alertFunction("Deletion cancelled!", "success");
-    }
-  }
-});
-
-// reset function
-function resetInput() {
-  firstName.value = "";
-  lastName.value = "";
-  phoneNumber.value = "";
-}
-
-// reset input box
-resetBtn.addEventListener("click", () => {
-  resetInput();
-});
 
 // create element and read an element
-saveBtn.addEventListener("click", () => {
+function createElement()
+{
     if(selectRow == null){
-    validation();
     const newTableRow = document.createElement("tr");
     const newTableDataFirstName = document.createElement("td");
     const newTableDateLastName = document.createElement("td");
@@ -99,7 +47,7 @@ saveBtn.addEventListener("click", () => {
         saveBtn.innerText = "save";
         resetInput();
     }
-});
+}
 
 function onEdit(td){
     selectRow = td.parentElement.parentElement;
@@ -109,7 +57,7 @@ function onEdit(td){
     saveBtn.innerText="Update"
 }
 
-
+// update an element
 function updateRecord(){
     selectRow.cells[0].innerHTML = firstName.value;
     selectRow.cells[1].innerHTML = lastName.value;
@@ -117,3 +65,81 @@ function updateRecord(){
     selectRow = null;
     alertFunction("✅ contact Updated Successfully!","info");
 }
+
+
+form.addEventListener('submit', (e)=>{
+  e.preventDefault();
+  validation();
+})
+
+//validation
+function validation() {
+  if(firstName.value.trim() === '') {
+    alertFunction("⚠️Please enter first name ", "warning");
+    firstName.focus();
+  }
+  else if(lastName.value.trim() === ''){
+    alertFunction("⚠️Please enter last name", "warning");
+    lastName.focus();
+  }
+  else if (phoneNumber.value.trim() === ""){
+    alertFunction(`⚠️Please enter  phone number`, "warning");
+    phoneNumber.focus();
+  }
+  else{
+    if(!(/^[A-Za-z]+$/.test(firstName.value))) {
+      alertFunction(`⚠️ Please enter only alphabetic characters in first name`, "warning");
+      firstName.focus();
+    }
+    else if(!(/^[A-Za-z]+$/.test(lastName.value))){
+      alertFunction(`⚠️ Please enter only alphabetic characters in last name`, "warning");
+      lastName.focus();
+    }
+    else if(!(/^\d{10}$/.test(phoneNumber.value))){
+      alertFunction(`⚠️ Invaild phone number`, "warning");
+      lastName.focus();
+    }
+    else{
+      createElement();
+    }
+  }
+}
+
+//warning function
+
+function alertFunction(message, className) {
+  const div = document.createElement("div");
+  div.className = `alert alert-${className} container mt-2 p-2`;
+  div.appendChild(document.createTextNode(`${message}`));
+  main.prepend(div);
+  setTimeout(() => {
+    document.querySelector(".alert").remove();
+  }, 2000);
+}
+
+
+// delete an element
+tableBody.addEventListener("click", (event) => {
+  target = event.target;
+  if (target.classList.contains("delete")) {
+    const confirmation = confirm(
+      "Are you sure you want to delete this contact?"
+    );
+    if (confirmation) {
+      target.parentElement.parentElement.remove();
+      alertFunction("❌ Conatct Deleted!", "danger");
+    } else {
+      alertFunction("Deletion cancelled!", "success");
+    }
+  }
+});
+
+// reset function
+function resetInput() {
+  firstName.value = "";
+  lastName.value = "";
+  phoneNumber.value = "";
+}
+
+// reset input box
+resetBtn.addEventListener("click", () => {resetInput();});
