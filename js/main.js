@@ -133,8 +133,10 @@ tableBody.addEventListener("click", (event) => {
     if (confirmation) {
       target.parentElement.parentElement.remove();
       alertFunction("❌ Conatct Deleted!", "danger");
+      resetInput();
     } else {
       alertFunction("Deletion cancelled!", "success");
+      resetInput();
     }
   }
 });
