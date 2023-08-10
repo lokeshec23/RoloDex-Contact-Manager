@@ -99,7 +99,7 @@ body, html{
   
   
   #storeList{
-    display: table;
+    opacity: 1;
   }
   
   
