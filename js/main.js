@@ -11,11 +11,13 @@ const editBtn = document.querySelector(".edit_btn");
 const deleteBtn = document.querySelector(".delete_btn");
 const tableBody = document.querySelector("#contact_list");
 const form = document.querySelector("#contact_form");
-
-
+const table = document.querySelector("#storeList");
+// console.dir(table);
+const loaderContainer = document.querySelector(".loader-container")
 // create element and read an element
 function createElement()
-{
+{ 
+   loader();
     if(selectRow == null){
     const newTableRow = document.createElement("tr");
     const newTableDataFirstName = document.createElement("td");
@@ -44,6 +46,7 @@ function createElement()
     resetInput();
     }
     else{
+      
         updateRecord();
         saveBtn.innerText = "save";
         resetInput();
@@ -70,11 +73,11 @@ function updateRecord(){
 
 form.addEventListener('submit', (e)=>{
   e.preventDefault();
-  validation();
+  validation(e);
 })
 
 //validation
-function validation() {
+function validation(e) {
   if(firstName.value.trim() === '' || !(/^[A-Za-z]+$/.test(firstName.value))){
     alertFunction(`⚠️ Please enter only alphabetic characters in first name`, "warning");
     firstName.focus();
@@ -85,7 +88,7 @@ function validation() {
     alertFunction(`⚠️ Phone number must be exactly ten digits long.`,"warning") ;
     phoneNumber.focus();
   }else{
-    createElement();
+      createElement()
   }
 }
 
@@ -136,3 +139,12 @@ function resetInput() {
 
 // reset input box
 resetBtn.addEventListener("click", () => {resetInput();});
+
+function loader(){
+  table.style.display = "none";
+  const createloader = loaderContainer.children[0];
+  createloader.className = "loader";
+  setTimeout(() => {
+    table.style.display = "table";
+    createloader.classList.remove("loader");
+  }, 1000);}
