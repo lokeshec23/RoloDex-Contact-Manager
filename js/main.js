@@ -121,10 +121,12 @@ tableBody.addEventListener("click", (event) => {
       target.parentElement.parentElement.remove();
       alertFunction("❌ Conatct Deleted!", "danger");
       resetInput();
+       loader();
       saveBtn.innerText = "save"
     } else {
       alertFunction("Deletion cancelled!", "success");
       resetInput();
+       loader();
       saveBtn.innerText = "save";
     }
   }
