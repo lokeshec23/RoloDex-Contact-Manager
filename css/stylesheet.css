@@ -12,6 +12,7 @@
 
 body, html{
     background-color:  whitesmoke;
+    opacity: 1;
 }
 
 
@@ -40,8 +41,66 @@ body, html{
     border: none;
 }
 
+
 .table-rounded{
     border-radius: 5px;
     overflow: hidden!important;
     box-shadow: 5px 5px 10px rgb(231, 231, 231);
 }
+
+ .error{
+    color: rgb( 242, 18, 18);
+ }
+
+ .form-group.success input{
+    border-color: #0cc477;
+ }
+
+ .form-group.error  input{
+    border-color: rgb( 206, 67, 67 );
+ }
+
+ /* loading */
+ .loader-container{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+    bottom: 70px ;
+    opacity: 1;
+  }
+  
+  .loader {
+    border: 4px solid #f3f3f3;
+    border-top: 4px solid #3498db;
+    border-radius: 50%;
+    width: 40px;
+    height: 40px;
+    animation: spin 1s linear infinite;
+ }
+
+ .overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5);
+    z-index: 9999;
+    display: none;
+  }
+  
+
+   @keyframes spin { 
+    0% { transform: rotate(0deg); }
+    50% { transform: rotate(180deg);}
+    100% { transform: rotate(360deg); }
+  }
+  
+  
+  #storeList{
+    display: table;
+  }
+  
+  
+  
