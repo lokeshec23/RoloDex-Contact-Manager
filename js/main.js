@@ -75,34 +75,17 @@ form.addEventListener('submit', (e)=>{
 
 //validation
 function validation() {
-  if(firstName.value.trim() === '') {
-    alertFunction("⚠️Please enter first name ", "warning");
+  if(firstName.value.trim() === '' || !(/^[A-Za-z]+$/.test(firstName.value))){
+    alertFunction(`⚠️ Please enter only alphabetic characters in first name`, "warning");
     firstName.focus();
-  }
-  else if(lastName.value.trim() === ''){
-    alertFunction("⚠️Please enter last name", "warning");
+  }else if(lastName.value.trim() === '' || !(/^[A-Za-z]+$/.test(lastName.value))){
+    alertFunction(`⚠️ Please enter only alphabetic characters in last name`, "warning");
     lastName.focus();
-  }
-  else if (phoneNumber.value.trim() === ""){
-    alertFunction(`⚠️Please enter  phone number`, "warning");
+  }else if(phoneNumber.value.trim() === "" || !(/^\d{10}$/.test(phoneNumber.value))){
+    alertFunction(`⚠️ Phone number must be exactly ten digits long.`,"warning") ;
     phoneNumber.focus();
-  }
-  else{
-    if(!(/^[A-Za-z]+$/.test(firstName.value))) {
-      alertFunction(`⚠️ Please enter only alphabetic characters in first name`, "warning");
-      firstName.focus();
-    }
-    else if(!(/^[A-Za-z]+$/.test(lastName.value))){
-      alertFunction(`⚠️ Please enter only alphabetic characters in last name`, "warning");
-      lastName.focus();
-    }
-    else if(!(/^\d{10}$/.test(phoneNumber.value))){
-      alertFunction(`⚠️ Invaild phone number`, "warning");
-      lastName.focus();
-    }
-    else{
-      createElement();
-    }
+  }else{
+    createElement();
   }
 }
 
