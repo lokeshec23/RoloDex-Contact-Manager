@@ -141,10 +141,10 @@ function resetInput() {
 resetBtn.addEventListener("click", () => {resetInput();});
 
 function loader(){
-  table.style.display = "none";
+  table.style.opacity = 0.2;
   const createloader = loaderContainer.children[0];
   createloader.className = "loader";
   setTimeout(() => {
-    table.style.display = "table";
+    table.style.opacity = 1;
     createloader.classList.remove("loader");
   }, 1000);}
