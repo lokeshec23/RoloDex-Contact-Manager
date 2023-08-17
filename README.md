@@ -1,6 +1,6 @@
 # RoloDex-Contact-Manager
 
-    <p> 🚀 Just created a simple CRUD operation website using <strong>HTML/CSS, Bootstrap, and JavaScript!</strong> </p>
+    <p>🚀 Just created a simple CRUD operation website using <strong>HTML/CSS, Bootstrap, and JavaScript!</strong></p>
     <p> I built a basic <strong> CRUD (Create, Read, Update, Delete) application </strong> where you can add, edit, and delete entries</p>
     <p>📝 Features:</p>
     <p><strong>✅Easy Data Management:</strong> This website lets you perform CRUD operations (Create, Read, Update, Delete) on a list of people's names and ages. Manage your data with ease!
