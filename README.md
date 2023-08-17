@@ -3,7 +3,8 @@
 🚀 Just created a simple CRUD operation website using HTML, Bootstrap, and JavaScript! 
 I built a basic CRUD (Create, Read, Update, Delete) application where you can add, edit, and delete entries.
 📝 Features:
-✅Easy Data Management: This website lets you perform CRUD operations (Create, Read, Update, Delete) on a list of people's names and ages. Manage your data with ease!
+<p>✅Easy Data Management: This website lets you perform CRUD operations (Create, Read, Update, Delete) on a list of people's names and ages. Manage your data with ease!</p>
+
 ✅User-Friendly Interface: The user interface is designed to be intuitive and easy to navigate. Input fields for name and age make it simple to add new entries.
 ✅Stunning Visuals: The website boasts a visually appealing design, thanks to the use of Bootstrap for styling. The vibrant gradient background adds a touch of elegance.
 ✅Responsive Design: Whether you're using a desktop, tablet, or smartphone, the website adapts to different screen sizes, ensuring a seamless experience on any device.
