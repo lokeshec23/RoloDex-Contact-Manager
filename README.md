@@ -4,7 +4,6 @@
     <p>
         I built a basic <strong> CRUD (Create, Read, Update, Delete) application </strong> where you can add, edit, and delete entries.
     </p>
-
     <p>
         📝 Features:
     </p>
